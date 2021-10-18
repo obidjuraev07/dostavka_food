@@ -1,0 +1,16 @@
+---- postgresqldan foydalanilyapti ----
+
+#### DATABASE setting
+-----  CREATE USER "efood_user" WITH PASSWORD 'efood_root';
+-----  CREATE DATABASE "efood_db" OWNER 'efood_user';
+
+#### Create user
+---- python manage.py createsuperuser
+
+   username --- admin
+   email   ---  admin@efood.uz
+   password --- 123456
+
+####  How to use dumpdata and loaddata
+------   python manage.py dumpdata app_name > app_name/fixtures/db.json
+------  python manage.py loaddata db.json
