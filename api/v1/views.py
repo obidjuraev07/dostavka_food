@@ -1,4 +1,5 @@
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
 from rest_framework.exceptions import NotFound
@@ -10,6 +11,7 @@ from foods.models import Foods,Category
 class FoodsView(GenericAPIView):
     serializer_class = FoodsSerializers
     queryset = Foods.objects.all()
+    permission_classes = [AllowAny, ]
 
     def get_object(self,*args,**kwargs):
         try:
